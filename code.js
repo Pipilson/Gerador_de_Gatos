@@ -14,11 +14,14 @@ function clearAll() {
 function showMeme() {
   clearAll();
   const randomMemeUrl = getRandomData('memes'); //String com uma url aleatória
-  
-  const newMeme = document.createElement('img'); //Cria uma tag img
-  newMeme.setAttribute('src', randomMemeUrl); //Coloca uma src e uma url na img gerada
 
-  document.getElementById('meme').appendChild(newMeme); //Adiciona conteudo
+  const gatoNome = document.createElement('h1'); //Cria uma tag p para a frase
+  const gatoFoto = document.createElement('img'); //Cria uma tag p para o autor
+  gatoNome.textContent = randomMemeUrl.nome; //Coloca a string quote como conteudo da tag
+  gatoFoto.setAttribute('src', randomMemeUrl.foto); //Coloca a string author como conteudo da 
+
+  document.getElementById('meme').appendChild(gatoNome); //Adiciona conteudo
+  document.getElementById('meme').appendChild(gatoFoto);
 }
 
 function showJoke() {
@@ -106,7 +109,16 @@ function getRandomData(type) {
 // ----------------------------------------------------
 
 // Source: https://www.thecoderpedia.com/blog/programming-memes/, Reddit
-const memes = ['img/sophie.png', 'img/branquinha.png', 'img/sarue.png', 'img/pinky.png', 'img/mau.png', 'img/meevin.png', 'img/milly.png', 'img/gosha.png']
+const memes = [
+  { foto: 'img/sophie.png', nome: 'Sophie'},
+  { foto: 'img/branquinha.png', nome: 'Branquinha'},
+  { foto: 'img/sarue.png', nome: 'Saruê'},
+  { foto: 'img/pinky.png', nome: 'Pinky'},
+  { foto: 'img/mau.png', nome: 'Mau'},
+  { foto: 'img/meevin.png', nome: 'Meevin'},
+  { foto: 'img/milly.png', nome: 'Milly'},
+  { foto: 'img/gosha.png', nome: 'Gosha'}
+];
 // Sourced from: http://www.devtopics.com/best-programming-jokes/
 const jokes = ['This statement', 'Eight bytes walk into a bar.  The bartender asks, “Can I get you anything?” “Yeah,” reply the bytes.  “Make us a double.”', 'There are only 10 kinds of people in this world: those who know binary and those who don’t.', 'All programmers are playwrights, and all computers are lousy actors.', 'Have you heard about the new Cray super computer?  It’s so fast, it executes an infinite loop in 6 seconds.', 'The generation of random numbers is too important to be left to chance.', 'Debugging: Removing the needles from the haystack.', '“Debugging” is like being the detective in a crime drama where you are also the murderer.', 'There are two ways to write error-free programs; only the third one works.', 'The best thing about a Boolean is even if you are wrong, you are only off by a bit.'];
 

@@ -1,6 +1,6 @@
 function clearAll() {
   
-  const memeContainer = document.querySelector('#meme'); //Seleciona o container id=meme
+  const memeContainer = document.querySelector('#gatoImg'); //Seleciona o container id=meme
   const funnyContainer = document.querySelector('#funny'); //Seleciona o container id=funny 
   const wisdomContainer = document.querySelector('#wisdom'); //Seleciona o container id=wisdom 
   const riddleContainer = document.querySelector('#riddle'); //Seleciona o container id=riddle   
@@ -11,31 +11,54 @@ function clearAll() {
   riddleContainer.innerHTML = ''; //Deleta conteudo
 }
 
-function showMeme() {
+function fotoDeGato() {
   clearAll();
-  const randomMemeUrl = getRandomData('memes'); //String com uma url aleatória
+  const gatoAleatorio = getRandomData('gatinhos'); //String com uma url aleatória
 
   const gatoNome = document.createElement('h1'); //Cria uma tag p para a frase
   const gatoFoto = document.createElement('img'); //Cria uma tag p para o autor
-  gatoNome.textContent = randomMemeUrl.nome; //Coloca a string quote como conteudo da tag
-  gatoFoto.setAttribute('src', randomMemeUrl.foto); //Coloca a string author como conteudo da 
+  gatoNome.textContent = gatoAleatorio.nome; //Coloca a string quote como conteudo da tag
+  gatoFoto.setAttribute('src', gatoAleatorio.foto); //Coloca a string author como conteudo da 
 
-  document.getElementById('meme').appendChild(gatoNome); //Adiciona conteudo
-  document.getElementById('meme').appendChild(gatoFoto);
+  document.getElementById('gatoImg').appendChild(gatoNome); //Adiciona conteudo
+  document.getElementById('gatoImg').appendChild(gatoFoto);
+}
+
+function calcularIdade() {
+  
+  const idadeHumana = document.querySelector('input').value;
+  let idadeGato = 0;
+  
+  for(let i = 0; i < idadeHumana; i++){
+    if(i === 0){
+      idadeGato += 15;
+    } else if (i === 1){
+      idadeGato += 9;
+    } else {
+      idadeGato += 4;
+    }
+  }
+
+  if(idadeHumana == 0) {
+    alert('Insira uma idade válida!\nNúmeros inteiros de 1 à 99');
+  } else {
+    alert('Seu gato tem ' + idadeGato + ' anos em idade humana');
+  }
 }
 
 function showJoke() {
-  clearAll();
-  const randomJoke = getRandomData('jokes'); //String aleatória
+  //clearAll();
+  //const randomJoke = getRandomData('jokes'); //String aleatória
   
-  const newJoke = document.createElement('p'); //Cria uma tag p
-  newJoke.textContent = randomJoke; //Coloca a string como conteudo da tag
+  //const newJoke = document.createElement('p'); //Cria uma tag p
+  //newJoke.textContent = randomJoke; //Coloca a string como conteudo da tag
 
-  document.getElementById('funny').appendChild(newJoke); //Adiciona conteudo
+  //document.getElementById('funny').appendChild(newJoke); //Adiciona conteudo
+  //alert('Não');
 }
 
 function showQuote() {
-  clearAll();
+  /*clearAll();
   const randomQuote = getRandomData('quotes'); //Objeto aleatório
   
   const newQuote = document.createElement('p'); //Cria uma tag p para a frase
@@ -44,11 +67,11 @@ function showQuote() {
   newAuthor.textContent = "–" + randomQuote.author; //Coloca a string author como conteudo da tag
 
   document.getElementById('wisdom').appendChild(newQuote); //Adiciona conteudo quote
-  document.getElementById('wisdom').appendChild(newAuthor); //Adiciona conteudo author
+  document.getElementById('wisdom').appendChild(newAuthor); //Adiciona conteudo author*/
 }
 
 function showRiddle() {
-  clearAll();
+  /*clearAll();
   const randomRiddle = getRandomData('riddles'); //Objeto aleatório
   
   const newQuestion = document.createElement('p'); //Cria uma tag p para a pergunta
@@ -59,11 +82,11 @@ function showRiddle() {
 
   document.getElementById('riddle').appendChild(newQuestion); //Adiciona conteudo question
   newAnswer.hidden = true; //Esconde a resposta
-  document.getElementById('riddle').appendChild(newAnswer); //Adiciona conteudo answer
+  document.getElementById('riddle').appendChild(newAnswer); //Adiciona conteudo answer*/
 }
 
 function revealAnswers() {
-    const container = document.querySelector('#riddle'); //Pega o container de riddle
+    /*const container = document.querySelector('#riddle'); //Pega o container de riddle
     const resposta = container.querySelector('#resposta'); //Pega a p #resposta
 
     if (resposta === null) {
@@ -72,7 +95,7 @@ function revealAnswers() {
         alert('A resposta já está disponível!'); //Avisa que já tem uma respota visivel
     } else {
         resposta.hidden = false; //Mostra resposta
-    }
+    }*/
 }
 
 /**
@@ -109,7 +132,7 @@ function getRandomData(type) {
 // ----------------------------------------------------
 
 // Source: https://www.thecoderpedia.com/blog/programming-memes/, Reddit
-const memes = [
+const gatinhos = [
   { foto: 'img/sophie.png', nome: 'Sophie'},
   { foto: 'img/branquinha.png', nome: 'Branquinha'},
   { foto: 'img/sarue.png', nome: 'Saruê'},
@@ -154,7 +177,7 @@ function rn(len) {
 }
 
 const data = {
-  memes,
+  gatinhos,
   jokes,
   quotes,
   riddles

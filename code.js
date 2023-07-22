@@ -140,7 +140,7 @@ const gatinhos = [
   { foto: 'img/mau.png', nome: 'Mau'},
   { foto: 'img/meevin.png', nome: 'Meevin'},
   { foto: 'img/milly.png', nome: 'Milly'},
-  { foto: 'img/gosha.png', nome: 'Gosha'}
+  { foto: 'img/ziggy.png', nome: 'Ziggy'}
 ];
 // Sourced from: http://www.devtopics.com/best-programming-jokes/
 const jokes = ['This statement', 'Eight bytes walk into a bar.  The bartender asks, “Can I get you anything?” “Yeah,” reply the bytes.  “Make us a double.”', 'There are only 10 kinds of people in this world: those who know binary and those who don’t.', 'All programmers are playwrights, and all computers are lousy actors.', 'Have you heard about the new Cray super computer?  It’s so fast, it executes an infinite loop in 6 seconds.', 'The generation of random numbers is too important to be left to chance.', 'Debugging: Removing the needles from the haystack.', '“Debugging” is like being the detective in a crime drama where you are also the murderer.', 'There are two ways to write error-free programs; only the third one works.', 'The best thing about a Boolean is even if you are wrong, you are only off by a bit.'];
